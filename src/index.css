@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #eef1f5;
+  color: #12293a;
+  font-family: "Segoe UI", Inter, system-ui, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Денежные и числовые колонки: моноширинные цифры, чтобы разряды выстраивались столбиком */
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: #bcc5d1;
+  border-radius: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+
+  .app-shell-header,
+  .app-shell-nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  .app-shell-main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+}
